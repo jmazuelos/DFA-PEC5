@@ -1,0 +1,15 @@
+<mat-grid-list [cols]="cols" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let component of componentsInput">
+    <mat-card class="card">
+      <mat-card-header class="card__header u-pointer" (click)="showDetail(component.id)">
+        <mat-card-subtitle>{{component.id}}</mat-card-subtitle>
+        <mat-card-title>{{component.author}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="card__img u-pointer" (click)="showDetail(component.id)" [src]="component.download_url" alt="">
+      <mat-card-actions class="card__actions">
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

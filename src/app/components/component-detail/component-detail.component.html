@@ -1,0 +1,28 @@
+<div class="container">
+  <mat-accordion>
+    <mat-card class="panel__header">
+      <mat-card-title>{{component.id}} - {{component.author}}</mat-card-title>
+      <button mat-mini-fab color="primary" aria-label="Back" (click)="back()">
+        <mat-icon >arrow_back</mat-icon>
+      </button>
+    </mat-card>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{panelOpenState ? 'Close' : 'show'}} all details</mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-card >
+        <img mat-card-image class="card__img" [src]="component.download_url" alt="Photo of a Shiba Inu" loading="lazy">
+        <mat-card-content>
+          <p>Card description</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+
+

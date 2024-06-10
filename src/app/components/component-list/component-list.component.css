@@ -1,0 +1,13 @@
+.toggle-container {
+  display: flex;
+  justify-content: end;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+

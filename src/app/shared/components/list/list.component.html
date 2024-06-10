@@ -1,0 +1,5 @@
+<mat-list role="list">
+  <mat-card class="list__card" *ngFor="let component of componentsInput">
+    <mat-card-content class="u-pointer u-break-word" (click)="showDetail(component.id)"><strong>id:</strong> {{component.id}} - <strong>author:</strong> {{component.author}} - <strong>URL:</strong> {{component.download_url}}</mat-card-content>
+  </mat-card>
+</mat-list>

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="toggle-container">
+    <mat-button-toggle-group #group="matButtonToggleGroup" value="list">
+      <mat-button-toggle value="grid" aria-label="Grid view">
+        <mat-icon>grid_view</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="list" selected aria-label="List view">
+        <mat-icon>view_list</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  
+  <div *ngIf="isLoading" class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+  
+  <app-grid [@toggleView] [componentsInput]="components" *ngIf="group.value === 'grid' && !isLoading"></app-grid>
+  
+  <app-list [@toggleView] [componentsInput]="components" *ngIf="group.value === 'list' && !isLoading"></app-list>
+</div>
+
+

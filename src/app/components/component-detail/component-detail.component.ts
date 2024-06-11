@@ -11,6 +11,7 @@ import { ComponentService } from '../../services/component.service';
 export class ComponentDetailComponent implements OnInit {
   component!: Image;
   panelOpenState = false;
+  isLoading = true;
 
   constructor(private componentService: ComponentService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
@@ -20,6 +21,7 @@ export class ComponentDetailComponent implements OnInit {
     if(id){
       this.componentService.getComponentById(id).subscribe(componentResult => {
         this.component = componentResult;
+        this.isLoading = false;
       })
     }
   }
